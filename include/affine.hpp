@@ -24,7 +24,14 @@
 #ifndef AFFINE_HPP
 #define AFFINE_HPP
 
+#if (__GNUC__ > 3) && !defined(HAVE_MCHECK) && !defined(PPC64)    // mcheck does not understand _mm_alloc et. al.
+#define AFFINE_MATRIX_USE_SSE
+#endif
+
+#ifdef AFFINE_MATRIX_USE_SSE
 #include <xmmintrin.h>
+#endif
+
 #include <cstring>
 #include <iostream>
 #include <iomanip>
