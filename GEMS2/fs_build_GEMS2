@@ -22,11 +22,11 @@ if [ "$ARCH" == 'ppc64le' ]; then
     -DCMAKE_CXX_COMPILER=$CXX \
     -DCMAKE_CXX_COMPILER_AR=$AR \
     -DCMAKE_CXX_COMPILER_RANLIB=$RANLIB \
-    -DCMAKE_CXX_FLAGS="--fPIC -fpermissive" \
+    -DCMAKE_CXX_FLAGS="--fPIC -fpermissive -DPPC64" \
     -DCMAKE_C_COMPILER=$CC \
     -DCMAKE_C_COMPILER_AR=$AR \
     -DCMAKE_C_COMPILER_RANLIB=$RANLIB \
-    -DCMAKE_C_FLAGS="-fPIC -fpermissive" \
+    -DCMAKE_C_FLAGS="-fPIC -fpermissive -DPPC64" \
     -DCMAKE_VERBOSE_MAKEFILE=ON \
     -DCMAKE_INSTALL_PREFIX=.
 else 

@@ -44,10 +44,10 @@ endif()
 
 set(CMAKE_CXX_STANDARD 11)
 
-if (NOT PPC64)
-  set(CMAKE_CXX_FLAGS "-fPIC -fpermissive -msse2 -mfpmath=sse")
+if (PPC64)
+  set(CMAKE_CXX_FLAGS "-fPIC -fpermissive -DPPC64")
 else()
-  set(CMAKE_CXX_FLAGS "-fPIC -fpermissive")
+  set(CMAKE_CXX_FLAGS "-fPIC -fpermissive -msse2 -mfpmath=sse")
 endif()
 
 if(GEMS_BUILD_EXECUTABLES OR GEMS_BUILD_GUI)
