@@ -43,7 +43,12 @@ else()
 endif()
 
 set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_FLAGS "-fPIC -fpermissive -msse2 -mfpmath=sse")
+
+if (NOT PPC64)
+  set(CMAKE_CXX_FLAGS "-fPIC -fpermissive -msse2 -mfpmath=sse")
+else()
+  set(CMAKE_CXX_FLAGS "-fPIC -fpermissive")
+endif()
 
 if(GEMS_BUILD_EXECUTABLES OR GEMS_BUILD_GUI)
   add_definitions(-DUSE_DYNAMIC_MESH)
