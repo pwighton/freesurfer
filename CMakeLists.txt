@@ -367,7 +367,6 @@ add_subdirectories(
   mri_vol2surf
   mri_vol2vol
   mri_voldiff
-  mri_watershed
   mris_anatomical_stats
   mris_annot_diff
   mris_ca_label
