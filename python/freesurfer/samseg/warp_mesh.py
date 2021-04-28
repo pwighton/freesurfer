@@ -27,7 +27,7 @@ def kvlWarpMesh(sourceMeshCollectionFileName, sourceDeformation, targetMeshColle
     targetNumberOfNodes = targetReferencePosition.shape[0]
     
     # In the special case of identical mesh connectivity, no need to do any optimization
-    if targetNumberOfNodes == sourceNumberOfNodes:
+    if (targetNumberOfNodes == sourceNumberOfNodes) and (sourceNumberOfNodes == sourceDeformation.shape[0]):
         if False:
             deltaReferencePosition = sourceReferencePosition - targetReferencePosition
             divergence = np.max(np.absolute(deltaReferencePosition))
